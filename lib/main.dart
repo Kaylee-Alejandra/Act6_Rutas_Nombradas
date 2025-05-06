@@ -1,43 +1,46 @@
 import 'package:flutter/material.dart';
+import 'package:luevano/pagina_uno.dart';
+import 'package:luevano/pantalla_dos.dart';
+import 'package:luevano/pantalla_tres.dart';
+import 'package:luevano/pantalla_cuatro.dart';
+import 'package:luevano/pantalla_cinco.dart';
+import 'package:luevano/pantalla_seis.dart';
+import 'package:luevano/pantalla_siete.dart';
+import 'package:luevano/pantalla_ocho.dart';
+import 'package:luevano/pantalla_nueve.dart';
+import 'package:luevano/pantalla_diez.dart';
+import 'package:luevano/pantalla_once.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+  // Cambiado de MisRutasApp a MyApp para coincidir con el runApp
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
+      title: "XD",
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.deepPurple,
         ),
       ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const FirstScreen(),
+        '/second': (context) => const PantallaDos(),
+        '/tercera': (context) => const PantallaTres(),
+        '/cuarta': (context) => const PantallaCuatro(),
+        '/quinta': (context) => const PantallaCinco(),
+        '/sexta': (context) => const PantallaSeis(),
+        '/septima': (context) => const PantallaSiete(),
+        '/octava': (context) => const PantallaOcho(),
+        '/novena': (context) => const PantallaNueve(),
+        '/decima': (context) => const PantallaDiez(),
+        '/onceava': (context) => const PantallaOnce(),
+      },
     );
   }
 }
